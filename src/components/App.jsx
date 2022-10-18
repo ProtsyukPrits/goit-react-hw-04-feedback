@@ -3,6 +3,7 @@ import { Section } from './Section/Section';
 import { FeedbackOptions } from './FeedbackOptions/FeedbackOptions';
 import { Statistics } from './Statistics/Statistics';
 import { Notification } from './Notification/Notification';
+import { Container } from './App.styled';
 
 export const App = () => {
   const [good, setGood] = useState(0);
@@ -36,16 +37,7 @@ export const App = () => {
   };
 
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'block',
-        fontSize: 25,
-        color: '#010101',
-
-        margin: 10,
-      }}
-    >
+    <Container>
       <Section title="Please leave feedback">
         <FeedbackOptions
           onLeaveFeedback={onLeaveFeedback}
@@ -64,6 +56,6 @@ export const App = () => {
           <Notification message="There is no feedback"></Notification>
         )}
       </Section>
-    </div>
+    </Container>
   );
 };
